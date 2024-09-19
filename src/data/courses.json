@@ -7,7 +7,9 @@
             "JavaScript",
             "Typescript"
         ],
-        "color": "#e3dbfa"
+        "color": "#e3dbfa",
+        "date": "10/12/2021",
+        "teacher": "Calleri"
     },
     {
         "id": 2,
@@ -17,7 +19,9 @@
             "Performance",
             "Goroutines"
         ],
-        "color": "#fbe2f4"
+        "color": "#fbe2f4",
+        "date": "16/10/2022",
+        "teacher": "Hulk"
     },
     {
         "id": 3,
@@ -27,7 +31,9 @@
             "Pry",
             "Docker"
         ],
-        "color": "#ffe1cc"
+        "color": "#ffe1cc",
+        "date": "24/06/2024",
+        "teacher": "Garro"
     },
     {
         "id": 4,
@@ -36,7 +42,9 @@
             "PyCharm",
             "Panda"
         ],
-        "color": "#d4f6ed"
+        "color": "#d4f6ed",
+        "date": "04/04/1997",
+        "teacher": "Rony"
     },
     {
         "id": 5,
@@ -46,6 +54,8 @@
             "Maven",
             "Junit"
         ],
-        "color": "#f2e2ff"
+        "color": "#f2e2ff",
+        "date": "05/04/2023",
+        "teacher": "Tiquinho Soares"
     }
 ]

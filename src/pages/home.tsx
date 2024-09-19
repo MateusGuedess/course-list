@@ -3,11 +3,13 @@ import { useMemo, useState } from 'react'
 import ThemeCardComponent from '../components/molecules/theme-card/theme-card.component'
 import courses from '../data/courses.json'
 
-interface ICourse {
+export interface ICourse {
     id: number
     title: string
     tags: string[]
     color: string
+    date: string
+    teacher: string
 }
 
 function Home() {
@@ -19,8 +21,8 @@ function Home() {
     <>
         <Flex gap={5} w="full" justifyContent="center" h="fit-content" pt={25} pb={25}>
             {
-                filteredCourses.map(course => (
-                    <ThemeCardComponent />
+                filteredCourses.map(({id, title, color, tags, date, teacher}: ICourse) => (
+                    <ThemeCardComponent key={id} title={title} color={color} tags={tags} date={date} teacher={teacher}/>
                 ))
             }
         </Flex>
