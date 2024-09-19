@@ -9,8 +9,8 @@ import {
     Tooltip,
     useColorModeValue
 } from '@chakra-ui/react'
-import ActionContainer from './theme-card-actions.component'
 import { ICourse } from '../../../pages/home'
+import ActionContainer from './theme-card-actions.component'
 
 export default function ThemeCardComponent({title, color, tags, date, teacher}: Omit<ICourse, "id">) {
   return (
@@ -41,14 +41,12 @@ export default function ThemeCardComponent({title, color, tags, date, teacher}: 
             </Box>
 
             <Flex gap={1}>
-                {tags.map((tag) =>
-                    <>
-                        <Tooltip label={tag}>
+                {tags.map((tag, index) =>
+                        <Tooltip label={tag} key={`${tag}-${index}`}>
                             <Tag size='sm' w="fit-content" pt={1} pb={1} borderRadius='full'>
                                 <TagLabel fontSize={12} fontWeight={600}>{tag}</TagLabel>
                             </Tag>
                         </Tooltip>
-                    </>
                 )}
             </Flex>
         </Flex>

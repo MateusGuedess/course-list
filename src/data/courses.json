@@ -20,7 +20,7 @@
             "Goroutines"
         ],
         "color": "#fbe2f4",
-        "date": "16/10/2022",
+        "date": "10/16/2022",
         "teacher": "Hulk"
     },
     {
@@ -32,7 +32,7 @@
             "Docker"
         ],
         "color": "#ffe1cc",
-        "date": "24/06/2024",
+        "date": "06/24/2024",
         "teacher": "Garro"
     },
     {
@@ -57,5 +57,87 @@
         "color": "#f2e2ff",
         "date": "05/04/2023",
         "teacher": "Tiquinho Soares"
+    },
+    {
+        "id": 6,
+        "title": "Agile",
+        "tags": [
+            "Jira",
+            "Clickup",
+            "MyApp"
+        ],
+        "color": "#624E88",
+        "date": "10/12/2021",
+        "teacher": "Jota Quest"
+    },
+    {
+        "id": 7,
+        "title": "AWS",
+        "tags": [
+            "Host",
+            "Storage",
+            "Domain"
+        ],
+        "color": "#E5D9F2",
+        "date": "10/16/2022",
+        "teacher": "Hulk"
+    },
+    {
+        "id": 8,
+        "title": "CloudFlare",
+        "tags": [
+            "IP",
+            "DNS",
+            "TCP"
+        ],
+        "color": "#D2E0FB",
+        "date": "06/024/2024",
+        "teacher": "Maria"
+    },
+    {
+        "id": 9,
+        "title": "Rust",
+        "tags": [
+            "Performance",
+            "Baixo Nível"
+        ],
+        "color": "#ACE1AF",
+        "date": "04/04/2028",
+        "teacher": "Formiga"
+    },
+    {
+        "id": 10,
+        "title": "Mobile",
+        "tags": [
+            "Java",
+            "Kotlin",
+            "Android Studio"
+        ],
+        "color": "#FF8A8A",
+        "date": "05/04/2026",
+        "teacher": "Barbara"
+    },
+    {
+        "id": 11,
+        "title": "CloudFlare",
+        "tags": [
+            "IP",
+            "DNS",
+            "TCP"
+        ],
+        "color": "#D2E0FB",
+        "date": "09/24/2025",
+        "teacher": "Maria"
+    },
+    {
+        "id": 12,
+        "title": "Rust",
+        "tags": [
+            "Performance",
+            "Baixo Nível"
+        ],
+        "color": "#FFE9D0",
+        "date": "04/04/2997",
+        "teacher": "Kipper Dev"
     }
 ]
