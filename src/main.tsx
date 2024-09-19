@@ -1,7 +1,12 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
+import { ChakraProvider, extendTheme, Flex } from '@chakra-ui/react';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import {
+    createBrowserRouter,
+    RouterProvider
+} from "react-router-dom";
+import Home from './pages/home.tsx';
+import Root from './routes/root.tsx';
 
 const colors = {
     brand: {
@@ -13,10 +18,28 @@ const colors = {
 
   const theme = extendTheme({ colors })
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        { index: true, element: <Home /> },
+        {
+            path: "/home",
+            element: <Home />,
+        },
+      ]
+    },
+
+  ]);
+
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ChakraProvider theme={theme}>
-        <App />
+        <Flex minHeight="100vh" minWidth="100vw" direction="column">
+            <RouterProvider router={router} />
+        </Flex>
     </ChakraProvider>
   </StrictMode>,
 )

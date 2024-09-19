@@ -8,23 +8,10 @@ import {
     TagLabel,
     useColorModeValue
 } from '@chakra-ui/react'
-
-function ActionContainer() {
-  return (
-    <Box display="flex" alignItems="center">
-      <Flex direction="column" as="span" ml="2" color="gray.600" fontSize="sm">
-        <Box color={useColorModeValue('gray', 'white')} fontWeight={700} fontSize={12}>
-            $250
-        </Box>
-        <Box fontSize="xs" color={useColorModeValue('gray', 'white')}>São Francisco, SA</Box>
-      </Flex>
-    </Box>
-  )
-}
+import ActionContainer from './theme-card-actions.component'
 
 export default function ThemeCardComponent() {
   return (
-    <Flex p={50} w="full" alignItems="center" justifyContent="center">
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         maxW="sm"
@@ -86,6 +73,5 @@ export default function ThemeCardComponent() {
           </Flex>
         </Box>
       </Flex>
-    </Flex>
   )
 }

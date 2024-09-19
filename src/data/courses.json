@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "title": "React",
+        "tags": [
+            "React",
+            "JavaScript",
+            "Typescript"
+        ],
+        "color": "#e3dbfa"
+    },
+    {
+        "id": 2,
+        "title": "Go",
+        "tags": [
+            "Docker",
+            "Performance",
+            "Goroutines"
+        ],
+        "color": "#fbe2f4"
+    },
+    {
+        "id": 3,
+        "title": "Ruby",
+        "tags": [
+            "Rails",
+            "Pry",
+            "Docker"
+        ],
+        "color": "#ffe1cc"
+    },
+    {
+        "id": 4,
+        "title": "Python",
+        "tags": [
+            "PyCharm",
+            "Panda"
+        ],
+        "color": "#d4f6ed"
+    },
+    {
+        "id": 5,
+        "title": "Java",
+        "tags": [
+            "Spring",
+            "Maven",
+            "Junit"
+        ],
+        "color": "#f2e2ff"
+    }
+]
