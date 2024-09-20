@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react'
 import ModalComponent from '../components/molecules/modal/modal.component'
 import SearchComponent from '../components/molecules/search/search.component'
 import ThemeCardComponent from '../components/molecules/theme-card/theme-card.component'
-import courses from '../data/courses.json'
+import useStore from '../store/store'
 
 export interface ICourse {
     id: number
@@ -20,6 +20,8 @@ function Home() {
     const [filterByDate, setFilterByDate] = useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
 
+    const {courses} = useStore(state => state)
+
     const filteredCourses = useMemo(() =>
         courses
     .filter((course: ICourse) => {
@@ -29,13 +31,15 @@ function Home() {
             return course.title.toLowerCase().includes(search.toLowerCase())
         }
         return course.title.toLowerCase().includes(search.toLowerCase()) && courseDate >= currentDate
-    }), [search, filterByDate])
+    }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()), [search, filterByDate])
+
+    console.log("AQUI", )
 
   return (
     <>
         <ModalComponent isOpen={isOpen} onClose={onClose} />
         <Flex mt={5} justifyContent="center" alignContent="center">
-            <SearchComponent w={250} placeholder="Search for a course" onChange={(e) => setSearch(e.target.value)} />
+            <SearchComponent w={300} placeholder="Procure um curso pelo titulo" onChange={(e) => setSearch(e.target.value)} />
             <Checkbox ml={5} defaultChecked={filterByDate} onChange={(e) => setFilterByDate(prevState => !prevState)}>Filtrar pela Data</Checkbox>
         </Flex>
         <Flex flexWrap="wrap" justifyContent="center" alignContent="center" gap={7} w="full" h="fit-content" pt={25} pb={25}>
