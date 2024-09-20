@@ -1,5 +1,6 @@
-import { Checkbox, Flex } from '@chakra-ui/react'
+import { Checkbox, Flex, useDisclosure } from '@chakra-ui/react'
 import { useMemo, useState } from 'react'
+import ModalComponent from '../components/molecules/modal/modal.component'
 import SearchComponent from '../components/molecules/search/search.component'
 import ThemeCardComponent from '../components/molecules/theme-card/theme-card.component'
 import courses from '../data/courses.json'
@@ -11,11 +12,13 @@ export interface ICourse {
     color: string
     date: string
     teacher: string
+    onOpen?: () => void
 }
 
 function Home() {
     const [search, setSearch] = useState("")
     const [filterByDate, setFilterByDate] = useState(false)
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     const filteredCourses = useMemo(() =>
         courses
@@ -30,6 +33,7 @@ function Home() {
 
   return (
     <>
+        <ModalComponent isOpen={isOpen} onClose={onClose} />
         <Flex mt={5} justifyContent="center" alignContent="center">
             <SearchComponent w={250} placeholder="Search for a course" onChange={(e) => setSearch(e.target.value)} />
             <Checkbox ml={5} defaultChecked={filterByDate} onChange={(e) => setFilterByDate(prevState => !prevState)}>Filtrar pela Data</Checkbox>
@@ -37,7 +41,7 @@ function Home() {
         <Flex flexWrap="wrap" justifyContent="center" alignContent="center" gap={7} w="full" h="fit-content" pt={25} pb={25}>
             {
                 filteredCourses.map(({id, title, color, tags, date, teacher}: ICourse) => (
-                    <ThemeCardComponent key={id} title={title} color={color} tags={tags} date={date} teacher={teacher}/>
+                    <ThemeCardComponent onOpen={onOpen} key={id} title={title} color={color} tags={tags} date={date} teacher={teacher}/>
                 ))
             }
         </Flex>

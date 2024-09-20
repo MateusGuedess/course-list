@@ -12,8 +12,24 @@ import {
 import { ICourse } from '../../../pages/home'
 import ActionContainer from './theme-card-actions.component'
 
-export default function ThemeCardComponent({title, color, tags, date, teacher}: Omit<ICourse, "id">) {
-  return (
+
+export default function ThemeCardComponent({onOpen, title, color, tags, date, teacher}: Omit<ICourse, "id">) {
+
+    function isCourseRecent(date: string) {
+        const currentDate = new Date().setHours(0, 0, 0, 0)
+        const courseDate = new Date(date).setHours(0, 0, 0, 0)
+        const expired = currentDate >= courseDate
+
+        return (
+        <Box display="flex" alignItems="baseline">
+            <Badge rounded="full" px="2" fontSize="0.7em" colorScheme={expired ? "red" : "green"}>
+              {expired ? "Tempo Esgotado" : "Dentro do Tempo"}
+            </Badge>
+        </Box>
+        )
+    }
+
+    return (
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         maxW="sm"
@@ -25,7 +41,14 @@ export default function ThemeCardComponent({title, color, tags, date, teacher}: 
         flexDirection="column"
         h={280}
         p={2}
-        position="relative">
+        position="relative"
+        onClick={onOpen}
+        _hover={{
+            transform: "scale(1.05)"
+        }}
+        transition="transform 0.2s"
+        cursor="pointer"
+        >
 
         <Flex h={48} bg={color} rounded="lg" flexDirection="column" justifyContent="space-between" p={2}>
             <Tag mt={2} size='lg' w="fit-content" borderRadius='full' colorScheme={useColorModeValue('gray', 'gray')}>
@@ -51,11 +74,7 @@ export default function ThemeCardComponent({title, color, tags, date, teacher}: 
             </Flex>
         </Flex>
         <Box mt={2} justifyContent="space-between">
-          <Box display="flex" alignItems="baseline">
-              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="green">
-                New
-              </Badge>
-          </Box>
+            {isCourseRecent(date)}
           <Flex justifyContent="space-between" alignContent="center" w="100%" alignItems="end">
             <ActionContainer />
             <Button
