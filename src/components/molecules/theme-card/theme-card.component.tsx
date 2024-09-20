@@ -9,8 +9,8 @@ import {
     Tooltip,
     useColorModeValue
 } from '@chakra-ui/react'
-import { ICourse } from '../../../pages/home'
 import ActionContainer from './theme-card-actions.component'
+import { ICourse } from '../../../types/Course'
 
 
 export default function ThemeCardComponent({onOpen, title, color, tags, date, teacher}: Omit<ICourse, "id">) {
