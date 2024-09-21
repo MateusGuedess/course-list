@@ -11,7 +11,7 @@ function Home() {
     const [filterByDate, setFilterByDate] = useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
 
-    const {courses} = useStore(state => state)
+    const {courses, selected, setSelected} = useStore(state => state)
 
     const filteredCourses = useMemo(() =>
         courses
@@ -24,17 +24,22 @@ function Home() {
         return course.title.toLowerCase().includes(search.toLowerCase()) && courseDate >= currentDate
     }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()), [search, filterByDate, courses])
 
+    function handleSelectedCourse(id: number) {
+        setSelected(id)
+        onOpen()
+    }
+
   return (
     <>
-        <ModalComponent isOpen={isOpen} onClose={onClose} />
+        {selected.id && <ModalComponent isOpen={isOpen} onClose={onClose} id={selected.id}/>}
         <Flex mt={5} justifyContent="center" alignContent="center">
             <SearchComponent w={300} placeholder="Procure um curso pelo titulo" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} />
             <Checkbox ml={5} defaultChecked={filterByDate} onChange={() => setFilterByDate(prevState => !prevState)}>Filtrar pela Data</Checkbox>
         </Flex>
         <Flex flexWrap="wrap" justifyContent="center" alignContent="center" gap={7} w="full" h="fit-content" pt={25} pb={25}>
             {
-                filteredCourses.map(({id, title, color, tags, date, teacher}: ICourse) => (
-                    <ThemeCardComponent onOpen={onOpen} key={id} title={title} color={color} tags={tags} date={date} teacher={teacher}/>
+                filteredCourses.map(({id, title, color, tags, date, teacher, description}: ICourse) => (
+                    <ThemeCardComponent onClick={() => handleSelectedCourse(id)} key={id} title={title} color={color} tags={tags} date={date} teacher={teacher} description={description}/>
                 ))
             }
         </Flex>

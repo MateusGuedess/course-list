@@ -9,11 +9,14 @@ import {
     Tooltip,
     useColorModeValue
 } from '@chakra-ui/react'
-import ActionContainer from './theme-card-actions.component'
 import { ICourse } from '../../../types/Course'
+import ActionContainer from './theme-card-actions.component'
 
+interface IThemeCardProps extends Omit<ICourse, "id"> {
+    onClick: () => void
+}
 
-export default function ThemeCardComponent({onOpen, title, color, tags, date, teacher}: Omit<ICourse, "id">) {
+export default function ThemeCardComponent({onClick, title, color, tags, date, teacher}: IThemeCardProps) {
 
     function isCourseRecent(date: string) {
         const currentDate = new Date().setHours(0, 0, 0, 0)
@@ -42,7 +45,7 @@ export default function ThemeCardComponent({onOpen, title, color, tags, date, te
         h={280}
         p={2}
         position="relative"
-        onClick={onOpen}
+        onClick={onClick}
         _hover={{
             transform: "scale(1.05)"
         }}

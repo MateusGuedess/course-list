@@ -9,7 +9,8 @@
         ],
         "color": "#e3dbfa",
         "date": "10/12/2021",
-        "teacher": "Calleri"
+        "teacher": "Calleri",
+        "description": "React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies."
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@
         ],
         "color": "#fbe2f4",
         "date": "10/16/2022",
-        "teacher": "Hulk"
+        "teacher": "Hulk",
+        "description": "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software."
     },
     {
         "id": 3,
@@ -33,7 +35,8 @@
         ],
         "color": "#ffe1cc",
         "date": "06/24/2024",
-        "teacher": "Garro"
+        "teacher": "Garro",
+        "description": "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write."
     },
     {
         "id": 4,
@@ -44,7 +47,8 @@
         ],
         "color": "#d4f6ed",
         "date": "04/04/1997",
-        "teacher": "Rony"
+        "teacher": "Rony",
+        "description": "Python is a programming language that lets you work quickly and integrate systems more effectively."
     },
     {
         "id": 5,
@@ -56,7 +60,8 @@
         ],
         "color": "#f2e2ff",
         "date": "05/04/2023",
-        "teacher": "Tiquinho Soares"
+        "teacher": "Tiquinho Soares",
+        "description": "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible."
     },
     {
         "id": 6,
@@ -68,7 +73,8 @@
         ],
         "color": "#624E88",
         "date": "10/12/2021",
-        "teacher": "Jota Quest"
+        "teacher": "Jota Quest",
+        "description": "Agile is a project management methodology that uses short development cycles called sprints to focus on continuous improvement in the development of a product or service."
     },
     {
         "id": 7,
@@ -80,7 +86,8 @@
         ],
         "color": "#E5D9F2",
         "date": "10/16/2022",
-        "teacher": "Hulk"
+        "teacher": "Hulk",
+        "description": "Amazon Web Services (AWS) is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis."
     },
     {
         "id": 8,
@@ -92,7 +99,8 @@
         ],
         "color": "#D2E0FB",
         "date": "06/024/2024",
-        "teacher": "Maria"
+        "teacher": "Maria",
+        "description": "Cloudflare, Inc. is an American web infrastructure and website security company that provides content delivery network services, DDoS mitigation, Internet security, and distributed domain name server services."
     },
     {
         "id": 9,
@@ -103,7 +111,8 @@
         ],
         "color": "#ACE1AF",
         "date": "04/04/2028",
-        "teacher": "Formiga"
+        "teacher": "Formiga",
+        "description": "Rust is a multi-paradigm system programming language focused on safety, especially safe concurrency."
     },
     {
         "id": 10,
@@ -115,7 +124,8 @@
         ],
         "color": "#FF8A8A",
         "date": "05/04/2026",
-        "teacher": "Barbara"
+        "teacher": "Barbara",
+        "description": "Mobile development is the act or process by which a mobile app is developed for mobile devices, such as personal digital assistants, enterprise digital assistants or mobile phones."
     },
     {
         "id": 11,
@@ -127,7 +137,8 @@
         ],
         "color": "#D2E0FB",
         "date": "09/24/2025",
-        "teacher": "Maria"
+        "teacher": "Maria",
+        "description": "Cloudflare, Inc. is an American web infrastructure and website security company that provides content delivery network services, DDoS mitigation, Internet security, and distributed domain name server services."
     },
     {
         "id": 12,
@@ -138,6 +149,7 @@
         ],
         "color": "#FFE9D0",
         "date": "04/04/2997",
-        "teacher": "Kipper Dev"
+        "teacher": "Kipper Dev",
+        "description": "Rust is a multi-paradigm system programming language focused on safety, especially safe concurrency."
     }
 ]

@@ -5,5 +5,5 @@ export interface ICourse {
     color: string
     date: string
     teacher: string
-    onOpen?: () => void
+    description: string
 }
