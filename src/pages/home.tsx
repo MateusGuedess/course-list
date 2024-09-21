@@ -1,5 +1,6 @@
-import { Checkbox, Flex, useDisclosure } from '@chakra-ui/react'
+import { Button, Checkbox, Flex, useDisclosure } from '@chakra-ui/react'
 import { useMemo, useState } from 'react'
+import Drawer from '../components/molecules/drawer/drawer.component'
 import ModalComponent from '../components/molecules/modal/modal.component'
 import SearchComponent from '../components/molecules/search/search.component'
 import ThemeCardComponent from '../components/molecules/theme-card/theme-card.component'
@@ -10,6 +11,7 @@ function Home() {
     const [search, setSearch] = useState("")
     const [filterByDate, setFilterByDate] = useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen: isDrawerOpen, onOpen: onDrawerOpen, onClose: onDrawerClose } = useDisclosure()
 
     const {courses, selected, setSelected} = useStore(state => state)
 
@@ -32,9 +34,11 @@ function Home() {
   return (
     <>
         {selected.id && <ModalComponent isOpen={isOpen} onClose={onClose} id={selected.id}/>}
-        <Flex mt={5} justifyContent="center" alignContent="center">
+        <Drawer isOpen={isDrawerOpen} onClose={onDrawerClose}/>
+        <Flex mt={5} gap={5} justifyContent="center" alignContent="center">
             <SearchComponent w={300} placeholder="Procure um curso pelo titulo" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} />
-            <Checkbox ml={5} defaultChecked={filterByDate} onChange={() => setFilterByDate(prevState => !prevState)}>Filtrar pela Data</Checkbox>
+            <Checkbox defaultChecked={filterByDate} onChange={() => setFilterByDate(prevState => !prevState)}>Filtrar pela Data</Checkbox>
+            <Button onClick={onDrawerOpen} >Create a Course</Button>
         </Flex>
         <Flex flexWrap="wrap" justifyContent="center" alignContent="center" gap={7} w="full" h="fit-content" pt={25} pb={25}>
             {

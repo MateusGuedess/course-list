@@ -14,7 +14,7 @@ interface IModal {
 function ModalComponent({isOpen, onClose, id}: IModal) {
     const [toggleEdit, setToggleEdit] = useState(false)
     const course = useStore((state) => state.courses.find(course => course.id === id))
-    const {updateCourse, courses} = useStore(state => state)
+    const {updateCourse, deleteCourse} = useStore(state => state)
     const {
         handleSubmit,
         register,
@@ -36,8 +36,8 @@ const onSubmit = handleSubmit((data) => {
     };
     updateCourse(id, updatedCourse);
     onClose();
-    console.log("Aqui", courses);
 })
+
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
     <ModalOverlay />
@@ -70,7 +70,6 @@ const onSubmit = handleSubmit((data) => {
                     required: 'required',
                     disabled: !toggleEdit
                 })} />
-
         </ModalBody>
 
         <ModalFooter>
@@ -84,6 +83,10 @@ const onSubmit = handleSubmit((data) => {
                     </Button>
                 )
             }
+            <Button onClick={() => {
+                deleteCourse(id)
+                onClose()
+            }}>Delete</Button>
 
         </ModalFooter>
       </form>
