@@ -1,7 +1,7 @@
 #  Course list
 
 ## Objetivo
-Criar uma interface que possa mostrar uma listagem de cursos com ações de criar, deletar e atualizar estes cursos.
+Criar uma interface que possa mostrar uma listagem de cursos com ações de criar, deletar e atualizar estes cursos em 4 dias.
 
 Obs:. Design criado totalmente por mim ;)
 
